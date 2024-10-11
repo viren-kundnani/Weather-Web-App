@@ -15,7 +15,7 @@ function Cards() {
       </h1>
       <div className="max-w-[1240px] mx-auto grid md:grid-cols-4 gap-8 hidden md:grid">
         <div className="w-full bg-primary shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300">
-          <h2 className="text-2xl font-bold text-center py-8">Http Requests</h2>
+          <h2 className="text-2xl text-[#e9d8fd] font-bold text-center py-8">Http Requests</h2>
 
           <button
             onClick={() => {
@@ -28,7 +28,7 @@ function Cards() {
         </div>
 
         <div className="w-full bg-primary shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300">
-          <h2 className="text-2xl font-bold text-center py-8">Http Response</h2>
+          <h2 className="text-2xl text-[#e9d8fd] font-bold text-center py-8">Http Response</h2>
 
           <button
             onClick={() => {
@@ -40,7 +40,7 @@ function Cards() {
           </button>
         </div>
         <div className="w-full bg-primary shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300">
-          <h2 className="text-2xl font-bold text-center py-8">APIs</h2>
+          <h2 className="text-2xl text-[#e9d8fd] font-bold text-center py-8">APIs</h2>
 
           <button
             onClick={() => {
@@ -52,7 +52,7 @@ function Cards() {
           </button>
         </div>
         <div className="w-full bg-primary shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300">
-          <h2 className="text-2xl font-bold text-center py-8">
+          <h2 className="text-2xl text-[#e9d8fd] font-bold text-center py-8">
             Asynchronous JavaScript
           </h2>
 

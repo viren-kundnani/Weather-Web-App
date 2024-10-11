@@ -31,7 +31,7 @@ const Navbar = () => {
   };
 
   const handleHover = (event) => {
-    event.target.style.color = "#87CEFA";
+    event.target.style.color = "#87CEFF";
   };
 
   const handleLeave = (event) => {

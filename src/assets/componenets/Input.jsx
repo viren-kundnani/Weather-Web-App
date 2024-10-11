@@ -9,8 +9,12 @@ const Input = () => {
 
   const [hourlyData, setHourlyData] = useState("");
   const [CurrentData, setCurrentData] = useState("");
-  let city, temperature, weatherType, icon;
+  const [errorText, setErrorText] = useState("");
+  
+  let city, temperature, weatherType, icon, errortext;
   const getWeather = () => {
+    setHourlyData("");
+    setCurrentData("");
     fetch(
       "https://api.weatherapi.com/v1/forecast.json?key=cd8187028e6f488182a52355231105&q=" +
         location +
@@ -18,6 +22,7 @@ const Input = () => {
     )
       .then((response) => response.json())
       .then((json) => {
+        setErrorText("");
         let temp = json.forecast.forecastday[0].hour;
         setHourlyData({
           labels: temp.map((vals) => vals.time.substr(11, 5)),
@@ -38,6 +43,9 @@ const Input = () => {
           humidity: json.current.humidity,
           cloud: json.current.cloud,
         });
+      })
+      .catch(error => {
+        setErrorText("Invalid location entered or Server error.");
       });
   };
   const style = {
@@ -59,7 +67,7 @@ const Input = () => {
             </form>
             <div className="flex justify-center basis-full md:basis-5/12">
               <button className={styles.btn} onClick={getWeather}>
-                Get Forecast
+                Get Weather
               </button>
             </div>
           </div>
@@ -81,6 +89,7 @@ const Input = () => {
       <div className="flex items-center flex-wrap-reverse">
         <div className="basis-full md:basis-3/5" style={style}>
           {hourlyData != "" && <Linechart chartdata={hourlyData}/>}
+          {errorText != "" && <p className="text-center" style = {{color: "red", fontWeight: "bold"}}>{errorText}</p>}
         </div>
         <div className="basis-full md:basis-2/5" style={style}>
           {CurrentData != "" && (
